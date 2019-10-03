@@ -19,7 +19,7 @@ public class Business {
 	static{
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/login", "root", "root");
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/login", "root", "123456");
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
