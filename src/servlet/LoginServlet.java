@@ -3,8 +3,10 @@ package servlet;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
+import java.util.UUID;
 
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -67,6 +69,9 @@ public class LoginServlet extends HttpServlet {
 	    String pass = "";
 	    pass = Business.getPassword(username);
 	    if(pass.equals(password)&&!pass.equals("")){
+
+			Cookie cookie = new Cookie("vinson-auth", UUID.randomUUID().toString());
+			response.addCookie(cookie);
 	    	request.getRequestDispatcher("/LoginSuccess.jsp").forward(request, response); 
 //	    	response.sendRedirect(request.getContextPath()+"/LoginSuccess.jsp");
 	    }else{

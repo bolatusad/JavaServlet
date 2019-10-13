@@ -23,6 +23,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-    登录成功！<br>
+    <h1>登录成功</h1>
+  <a href="/servlet/learnServlet"> 获取header值 </a><br>
+  <a href="/servlet/NormalServlet">时间</a>
   </body>
 </html>
